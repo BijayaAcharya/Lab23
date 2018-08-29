@@ -1,0 +1,48 @@
+﻿@model Lab23.Models.User
+@{
+    ViewBag.Title = "Home Page";
+
+}
+<style>
+    body {
+        background-color: lightblue;
+    }
+
+    {
+        text-align: center;
+    }
+</style>
+
+<h1>Welcome To GC Coffee</h1>
+
+<a href="/Home/Register">Sign Up!</a>
+
+
+
+
+
+<div class="container" style="width:40%; margin-top:2%">
+    @using (Html.BeginForm("SaveRecord", "Home", FormMethod.Post))
+    {
+
+
+
+    @Html.Label("First Name")
+    @Html.TextBoxFor(Model => Model.firstName, new { @class = "form-control", @placeholder = "First Name" })
+    @Html.Label("Last Name")
+    @Html.TextBoxFor(Model => Model.lastName, new { @class = "form-control", @placeholder = "Last Name" })
+    @Html.Label("Email")
+    @Html.TextBoxFor(Model => Model.email, new { @class = "form-control", @placeholder = "example@gmail.com" })
+    @Html.Label("Phone Number")
+    @Html.TextBoxFor(Model => Model.phoneNumber, new { @class = "form-control", @placeholder = "xxxxxxxxxx" })
+    @Html.Label("Password")
+    @Html.PasswordFor(Model => Model.passWord, new { @class = "form-control", @placeholder = "Password" })
+
+
+    <br />
+
+    <button type="submit">SaveRecord</button>
+    }
+
+</div>
+
